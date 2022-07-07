@@ -4,6 +4,8 @@ Python syntax highlighting for Vim
 This is an enhanced version of the original Vim 6.1 Python syntax highlighting
 `python.vim` by Neil Schemenauer.
 
+NOTE: This is a opinionated fork of the original [Python Syntax Highlighting](https://github.com/vim-python/python-syntax)
+
 Features
 --------
 

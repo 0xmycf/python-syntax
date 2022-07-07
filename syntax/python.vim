@@ -70,12 +70,18 @@ endif
 
 "
 " Keywords
+" This section is changed
+" (many) Keywords are now in the pythonKeyword gorup
+"
+" Due to some personal preferences I split up keywords and conditionals and
+" bools
 "
 
 syn keyword pythonStatement     break continue del return pass yield global assert lambda with
 syn keyword pythonStatement     raise nextgroup=pythonExClass skipwhite
-syn keyword pythonStatement     def nextgroup=pythonFunction skipwhite
-syn keyword pythonStatement     class nextgroup=pythonClass skipwhite
+" These two have been changed from 'pythonStatement' to 'pythonKeyword'
+syn keyword pyhtonKeyword       def nextgroup=pythonFunction skipwhite
+syn keyword pyhtonKeyword       class nextgroup=pythonClass skipwhite
 if s:Enabled('g:python_highlight_class_vars')
     syn keyword pythonClassVar    self cls mcs
 endif
@@ -427,6 +433,8 @@ if v:version >= 508 || !exists('did_python_syn_inits')
     else
         command -nargs=+ HiLink hi def link <args>
     endif
+
+    HiLink pyhtonKeyword          Keyword
 
     HiLink pythonStatement        Statement
     HiLink pythonRaiseFromStatement   Statement
