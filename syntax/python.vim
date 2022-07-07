@@ -80,7 +80,8 @@ endif
 syn keyword pythonStatement     break continue del return pass yield global assert lambda with
 syn keyword pythonStatement     raise nextgroup=pythonExClass skipwhite
 " These two have been changed from 'pythonStatement' to 'pythonKeyword'
-syn keyword pyhtonKeyword       def nextgroup=pythonFunction skipwhite
+syn keyword pyhtonDef           def   nextgroup=pythonFunction skipwhite
+syn keyword pyhtonKeyword       async nextgroup=pythonDef   skipwhite
 syn keyword pyhtonKeyword       class nextgroup=pythonClass skipwhite
 if s:Enabled('g:python_highlight_class_vars')
     syn keyword pythonClassVar    self cls mcs
@@ -435,6 +436,7 @@ if v:version >= 508 || !exists('did_python_syn_inits')
     endif
 
     HiLink pyhtonKeyword          Keyword
+    HiLink pyhtonDef              Keyword
 
     HiLink pythonStatement        Statement
     HiLink pythonRaiseFromStatement   Statement
