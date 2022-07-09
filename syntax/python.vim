@@ -76,9 +76,18 @@ endif
 " Due to some personal preferences I split up keywords and conditionals and
 " bools
 "
+if !exists('g:python_syntax_extended_keywords')
+  let g:python_syntax_extended_keywords = 0
+endif
 
-syn keyword pythonStatement     break continue del return pass yield global assert lambda with
-syn keyword pythonStatement     raise nextgroup=pythonExClass skipwhite
+if g:python_syntax_extended_keywords
+    syn keyword pythonKeyword       break continue del return pass yield global assert lambda with
+    syn keyword pythonKeyword       raise nextgroup=pythonExClass skipwhite
+else
+    syn keyword pythonStatement     break continue del return pass yield global assert lambda with
+    syn keyword pythonStatement     raise nextgroup=pythonExClass skipwhite
+endif
+
 " These two have been changed from 'pythonStatement' to 'pythonKeyword'
 syn keyword pyhtonDef           def   nextgroup=pythonFunction skipwhite
 syn keyword pyhtonKeyword       async nextgroup=pythonDef   skipwhite

@@ -9,6 +9,10 @@ NOTE: This is a opinionated fork of the original [Python Syntax Highlighting](ht
 Features
 --------
 
+* Extended Python Keywords:
+  * do "let g:python_syntax_extended_keywords = 1"
+    to add "break continue del return pass yield global assert lambda with raise"
+    to the vim keywords (this might change highlighting for them)
 * Enhanced highlighting for:
   * Strings
   * Special symbols inside strings
