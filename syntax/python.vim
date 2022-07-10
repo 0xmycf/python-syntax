@@ -78,10 +78,10 @@ if !exists('g:python_syntax_extended_keywords')
 endif
 
 if g:python_syntax_extended_keywords
-    syn keyword pythonKeyword       break continue del return pass yield global assert lambda with
+    syn keyword pythonKeyword       break continue del return pass yield global assert lambda with match case
     syn keyword pythonKeyword       raise nextgroup=pythonExClass skipwhite
 else
-    syn keyword pythonStatement     break continue del return pass yield global assert lambda with
+    syn keyword pythonStatement     break continue del return pass yield global assert lambda with match case
     syn keyword pythonStatement     raise nextgroup=pythonExClass skipwhite
 endif
 
